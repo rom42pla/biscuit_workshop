@@ -1,7 +1,7 @@
 # Deploy instructions
 
 - Install `gh-pages`: `npm install --save-dev gh-pages`
-- Deploy with `npm run deploy`
+- Deploy with `npm run build && npm run deploy`
 - Wait a few minutes for the page to update
 
 # Astro Starter Kit: Basics
