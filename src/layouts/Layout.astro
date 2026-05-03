@@ -1,4 +1,5 @@
 ---
+import 'bootstrap/dist/css/bootstrap.min.css';
 import Navigator from "../components/Navigator.astro"
 const { title } = Astro.props;
 ---
@@ -6,44 +7,32 @@ const { title } = Astro.props;
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-</head>
+    <style>
+      @font-face {
+        font-family: 'Ubuntu';
+        src: url("../assets/ubuntu_font.ttf") format('truetype');
+        font-weight: 400;
+        font-style: normal;
+        font-display: swap;
+      }
+      :root { --ui-font: 'Ubuntu', system-ui, -apple-system, 'Segoe UI', Arial; }
+      html, body { font-family: var(--ui-font); }
+    </style>
+  </head>
   <body>
-	<Navigator 
-		links={[ 
-			{ href: '/', label: 'Home' }, 
-			{ href: '/why', label: 'Why BISCUIT?' }, 
-			{ href: '/cfp', label: 'Call for Papers' }, 
-			{ href: 'https://sites.google.com/di.uniroma1.it/biscuit-workshop-1/home', label: 'Past edition' }, 
-			]} />
-    <h1>{title}</h1>
-    <article>
-      <slot /> <!-- your content is injected here -->
-    </article>
+    <script>
+      import 'bootstrap/dist/js/bootstrap.bundle.min.js';
+    </script>
+    <Navigator />
+	<div class="container mt-4">
+	<div class="row justify-content-center">
+		<div class="col-12 col-lg-8">
+		<article>
+			<slot/>
+		</article>
+		</div>
+	</div>
+	</div>
+    
   </body>
-  <style>
-    article {
-		display: flex;
-		width: 100%;
-		max-width: 1100px;
-		margin: 0 auto;
-		box-sizing: border-box;
-		}
-
-		/* Desktop / larger screens */
-		@media (min-width: 900px) {
-		article {
-			width: 50%;
-		}
-		}
-		@font-face{
-			font-family: 'Ubuntu';
-			src: url("../assets/ubuntu_font.ttf") format('ttf');
-			font-weight: 400;
-			font-style: normal;
-			font-display: swap;
-			}
-			:root { --ui-font: 'Ubuntu', system-ui, -apple-system, 'Segoe UI', Arial; }
-			html,body { font-family: var(--ui-font); }
-
-			</style>
 </html>
