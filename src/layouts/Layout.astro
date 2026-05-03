@@ -1,0 +1,49 @@
+---
+import Navigator from "../components/Navigator.astro"
+const { title } = Astro.props;
+---
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+</head>
+  <body>
+	<Navigator 
+		links={[ 
+			{ href: '/', label: 'Home' }, 
+			{ href: '/why', label: 'Why BISCUIT?' }, 
+			{ href: '/cfp', label: 'Call for Papers' }, 
+			{ href: 'https://sites.google.com/di.uniroma1.it/biscuit-workshop-1/home', label: 'Past edition' }, 
+			]} />
+    <h1>{title}</h1>
+    <article>
+      <slot /> <!-- your content is injected here -->
+    </article>
+  </body>
+  <style>
+    article {
+		display: flex;
+		width: 100%;
+		max-width: 1100px;
+		margin: 0 auto;
+		box-sizing: border-box;
+		}
+
+		/* Desktop / larger screens */
+		@media (min-width: 900px) {
+		article {
+			width: 50%;
+		}
+		}
+		@font-face{
+			font-family: 'Ubuntu';
+			src: url('/assets/fonts/ubuntu_font.ttf') format('ttf');
+			font-weight: 400;
+			font-style: normal;
+			font-display: swap;
+			}
+			:root { --ui-font: 'Ubuntu', system-ui, -apple-system, 'Segoe UI', Arial; }
+			html,body { font-family: var(--ui-font); }
+
+			</style>
+</html>

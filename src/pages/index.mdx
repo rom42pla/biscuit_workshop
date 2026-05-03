@@ -1,0 +1,50 @@
+import Title from '../components/Title.astro'
+import Layout from '../layouts/Layout.astro'
+
+export const title = "BISCUIT"
+export const subtitle = "International Workshop on Biomedical Image and Signal Computing for Unbiasedness, Interpretability, and Trustworthiness"
+export const edition = "2nd"
+export const venue_name = "ECCV'26"
+export const venue_location = "Malmö, Sweden"
+export const venue_emojis = "🇸🇪"
+
+<Layout>
+  <main>
+    <Title
+      title={title}
+      subtitle={subtitle}
+      edition={edition}
+      img="src/assets/biscuit_logo.png"
+    />
+
+    # About this workshop 🍪
+
+    The {edition} edition of the {title} (Biomedical Image and Signal Computing for Unbiasedness, Interpretability, and Trustworthiness) workshop will be hosted at {venue_name} in {venue_location} {venue_emojis}.
+    
+    This workshop is dedicated to the fundamental science and methodological rigor of Unbiasedness, Interpretability, and Trustworthiness (UIT) in AI.
+    We focus on exploring the core questions: from understanding the deep-seated origins of algorithmic and data bias 🔍, to advancing the science of interpretability💡, or building systems we can fundamentally rely on 🤝.
+    We aim to unite researchers advancing these foundational aspects, showcasing novel methodologies, theoretical underpinnings, and rigorous evaluation techniques for UIT, rather than solely their downstream applications.
+    Finally, we will highlight the latest breakthroughs and chart future directions for creating inherently unbiased, truly interpretable, and verifiably trustworthy AI.
+    
+    More info [here](./why).
+
+    # Submit your Paper! 🧑‍💻
+
+    Submit via [OpenReview](). More information can be found in [our Call for Papers](./cfp).
+
+    TBA
+
+    # Keynote Speakers 🎤
+
+    TBA
+
+    # Schedule 🕘
+
+    TBA
+
+    # Organizers ✏️
+
+    TODO
+
+  </main>
+</Layout>

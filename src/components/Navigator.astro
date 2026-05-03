@@ -1,0 +1,47 @@
+---
+/*
+Simple navigation component.
+Props:
+- links: array of { href, label } (optional; defaults shown below)
+Usage:
+<NavSimple links={[ { href: '/', label: 'Home' }, { href: '/posts', label: 'Posts' }, { href: '/contact', label: 'Contact' } ]} />
+*/
+const { links = [
+  { href: '/', label: 'Home' },
+  { href: '/posts', label: 'Posts' },
+  { href: '/contact', label: 'Contact' },
+] } = Astro.props;
+---
+<nav class="nav-simple" role="navigation" aria-label="Main navigation">
+  {links.map(link => (
+    <a href={link.href}>{link.label}</a>
+  ))}
+</nav>
+
+<style>
+.nav-simple {
+  display: flex;
+  gap: 1rem;
+  align-items: center;
+  font-family: inherit;
+  padding: 0.5rem 0;
+}
+
+.nav-simple a {
+  color: inherit;
+  text-decoration: none;
+  padding: 0.35rem 0.5rem;
+  border-radius: 6px;
+  transition: background-color 0.15s, color 0.15s;
+}
+
+.nav-simple a:hover,
+.nav-simple a:focus {
+  background: rgba(0,0,0,0.06);
+  outline: none;
+}
+
+@media (max-width: 600px) {
+  .nav-simple { gap: 0.75rem; font-size: 0.95rem; }
+}
+</style>

@@ -1,0 +1,42 @@
+---
+import Title from '../components/Title.astro';
+import Layout from '../layouts/Layout.astro';
+const title = "BISCUIT";
+const subtitle = "International Workshop on Biomedical Image and Signal Computing for Unbiasedness, Interpretability, and Trustworthiness";
+const edition = "2nd";
+const venue_name = "ECCV'26"
+const venue_location = "Malmö, Sweden"
+const venue_emojis = "🇸🇪"
+---
+<Layout>
+  <main>
+    <Title
+      title={title}
+      subtitle={subtitle}
+      edition={edition},
+      img="src/assets/biscuit_logo.png"
+    />
+  </main>
+
+  <h1>
+    About this workshop 🍪
+  </h1>
+  <p>
+    The {edition} edition of the {title} (Biomedical Image and Signal Computing for Unbiasedness, Interpretability, and Trustworthiness) workshop will be hosted at {venue_name}  in {venue_location} {venue_emojis} <br>
+    This workshop is dedicated to the fundamental science and methodological rigor of Unbiasedness, Interpretability, and Trustworthiness (UIT) in AI. <br>
+    We focus on exploring the core questions: from understanding the deep-seated origins of algorithmic and data bias 🔍, to advancing the science of interpretability💡, or building systems we can fundamentally rely on 🤝 <br>
+    We aim to unite researchers advancing these foundational aspects, showcasing novel methodologies, theoretical underpinnings, and rigorous evaluation techniques for UIT, rather than solely their downstream applications. <br>
+    Finally, we will highlight the latest breakthroughs and chart future directions for creating inherently unbiased, truly interpretable, and verifiably trustworthy AI.
+
+    More info here.
+  </p>
+</Layout>
+
+<!-- <style>
+/* optional simple styling to match Roboto-centered layout */
+main {
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 1.5rem;
+}
+</style> -->

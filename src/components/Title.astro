@@ -1,0 +1,49 @@
+---
+const { title = "Title", subtitle = "Some description here.", edition = "1st", img = "https://via.placeholder.com/800x600" } = Astro.props;
+---
+<section class="simple-split">
+  <div class="left">
+    <h1>{title}</h1>
+    <h2>{subtitle}</h2>
+    <h3>{edition} edition</h3>
+  </div>
+  <div class="right">
+    <img src={img} alt="BISCUIT logo" />
+  </div>
+</section>
+
+<style>
+.simple-split {
+  display: flex;
+  width: 100%;
+  max-width: 1100px;
+  margin: 0 auto;
+  gap: 16px;
+  box-sizing: border-box;
+  padding: 16px;
+  justify-content: center;
+  align-items : center;
+}
+
+.simple-split .left,
+.simple-split .right {
+  flex: 1 1 50%;
+}
+
+.simple-split h1, .simple-split h2, .simple-split h3 {text-align: center;}
+/* .simple-split h2 { margin: 0 0 8px 0; font-size: 1.5rem; }
+.simple-split p { margin: 0; color: #555; } */
+
+.simple-split img {
+  width: 100%;
+  height: auto;
+  display: block;
+  border-radius: 8px;
+  object-fit: cover;
+}
+
+/* Stack on small screens */
+@media (max-width: 720px) {
+  .simple-split { flex-direction: column; }
+}
+</style>
