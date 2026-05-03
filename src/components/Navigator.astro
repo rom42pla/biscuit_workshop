@@ -7,10 +7,11 @@ Usage:
 <NavSimple links={[ { href: '/', label: 'Home' }, { href: '/posts', label: 'Posts' }, { href: '/contact', label: 'Contact' } ]} />
 */
 import 'bootstrap/dist/css/bootstrap.min.css';
+const base = import.meta.env.BASE_URL;
 const { links = [
-  { href: './', label: 'Home' }, 
-			{ href: './why', label: 'Why BISCUIT?' }, 
-			{ href: './cfp', label: 'Call for Papers' }, 
+  { href: '${base}', label: 'Home' }, 
+			{ href: '${base}why', label: 'Why BISCUIT?' }, 
+			{ href: '${base}cfp', label: 'Call for Papers' }, 
 			{ href: 'https://sites.google.com/di.uniroma1.it/biscuit-workshop-1/home', label: 'Past edition' },
 ] } = Astro.props;
 ---
