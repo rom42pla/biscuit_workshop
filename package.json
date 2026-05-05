@@ -10,7 +10,7 @@
     "build": "astro build",
     "preview": "astro preview",
     "astro": "astro",
-    "deploy": "npm run build && gh-pages -d dist"
+    "deploy": "rm -rf node_modules/.cache/gh-pages && npm run build && gh-pages -d dist"
   },
   "dependencies": {
     "@astrojs/mdx": "^5.0.4",
