@@ -1,0 +1,26 @@
+---
+import "bootstrap/dist/css/bootstrap.min.css";
+const {
+  name = "Name",
+  institution = "Institution",
+  img = "https://via.placeholder.com/800x600",
+  website = ".",
+  papers = ".",
+} = Astro.props;
+---
+
+<div class="col-6 col-lg-4">
+  <div class="ratio ratio-1x1">
+    <img
+      src={img}
+      class="img-fluid object-fit-cover"
+      alt="Keynote speaker image"
+    />
+  </div>
+  <h3>{name}</h3>
+  <p>{institution}</p>
+  <p>
+    <a href={website} target="_blank" style="text-decoration: none">🌐</a>
+    <a href={papers} target="_blank" style="text-decoration: none">📜</a>
+  </p>
+</div>

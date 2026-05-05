@@ -1,5 +1,12 @@
 # Deploy instructions
 
+- Install `Node.js`:
+    ```bash
+    curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.40.4/install.sh | bash
+    \. "$HOME/.nvm/nvm.sh"
+    nvm install 24
+    ```
+
 - Install `gh-pages`: `npm install --save-dev gh-pages`
 - Deploy with `npm run build && npm run deploy`
 - Wait a few minutes for the page to update
