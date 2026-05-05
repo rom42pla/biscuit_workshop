@@ -8,4 +8,11 @@ export default defineConfig({
   integrations: [mdx()],
   site: 'https://rom42pla.github.io',
   base: '/biscuit_workshop',  // omit if deploying to a custom domain or user site
+  vite: {
+    server: {
+      watch: {
+        usePolling: true
+      }
+    }
+  }
 });

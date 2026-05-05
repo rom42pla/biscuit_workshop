@@ -10,7 +10,7 @@ const {
 } = Astro.props;
 ---
 
-<div class="col-6 col-lg-4">
+<div class="col-4 col-lg-2">
   <div class="ratio ratio-1x1">
     <img
       src={img}
@@ -18,7 +18,7 @@ const {
       alt="Keynote speaker image"
     />
   </div>
-  <h3>{name}<br>{surname}</h3>
+  <p><b>{name}<br>{surname}</b></p>
   <p><i>{institution}</i></p>
   <p>
     <a href={website} target="_blank" style="text-decoration: none">🌐</a>

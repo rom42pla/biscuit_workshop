@@ -1,5 +1,6 @@
 import Title from '../components/Title.astro'
 import Keynote from '../components/Keynote.astro'
+import Organizers from '../components/Organizers.astro'
 import Layout from '../layouts/Layout.astro'
 
 import biscuit_logo from '../assets/biscuit_logo.png'
@@ -41,35 +42,40 @@ export const base = import.meta.env.BASE_URL
     <section class="container">
     <div class="row align-items-top text-center justify-content-center">
       <Keynote
-      name="Aldo Faisal"
+      name="Aldo"
+      surname="Faisal"
       institution="Imperial College London"
       img="https://profiles.imperial.ac.uk/a.faisal/thumbnail"
       website="https://profiles.imperial.ac.uk/a.faisal"
       papers="https://scholar.google.com/citations?user=WjHjbrwAAAAJ&hl=en"
     />
     <Keynote
-      name="Aasa Feragen"
+      name="Aasa"
+      surname="Feragen"
       institution="Technical University of Denmark"
       img="https://orbit.dtu.dk/files-asset/398971195/142917_2c599d15.jpg?w=160&f=webp"
       website="https://orbit.dtu.dk/en/persons/aasa-feragen"
       papers="https://scholar.google.com/citations?user=MNDVpoUAAAAJ&hl=en"
     />
     <Keynote
-      name="Nassir Navab"
+      name="Nassir"
+      surname="Navab"
       institution="Technical University of Munich"
       img="https://www.professoren.tum.de/fileadmin/w00bgr/www/pics/NavabNassir2.jpg"
       website="https://www.professoren.tum.de/en/navab-nassir"
       papers="https://scholar.google.gr/citations?user=kzoVUPYAAAAJ&hl=en"
     />
     <Keynote
-      name="Olga Russakovsky"
+      name="Olga"
+      surname="Russakovsky"
       institution="Princeton University"
       img="https://www.cs.princeton.edu/~olgarus/photos/OlgaRussakovsky.JPG"
       website="https://www.cs.princeton.edu/~olgarus/"
       papers="https://scholar.google.com/citations?user=TB5OwW8AAAAJ&hl=en"
     />
     <Keynote
-      name="Toshihiko Yamasaki"
+      name="Toshihiko"
+      surname="Yamasaki"
       institution="University of Tokyo"
       img="https://cms.ee.t.u-tokyo.ac.jp/assets/yamasaki-tosihiko.jpg"
       website="https://www.ee.t.u-tokyo.ac.jp/en/staff/yamasaki-toshihiko/"
@@ -85,7 +91,50 @@ export const base = import.meta.env.BASE_URL
 
     # Organizers ✏️
 
-    TODO
+    <section class="container">
+    <div class="row align-items-top text-center justify-content-center">
+      <Organizers
+      name="Romeo"
+      surname="Lanzino"
+      institution="KTH Royal Institute of Technology"
+      img="https://rom42pla.github.io/images/me.png"
+      website="https://rom42pla.github.io/"
+      papers="https://scholar.google.com/citations?user=yCXzeJAAAAAJ"
+    />
+    <Organizers
+      name="Maria"
+      surname="Vakalopoulou"
+      institution="CentraleSupelec, University Paris Saclay"
+      img="https://mariavak.github.io/assets/img/prof_pic.png?679164b59e4abcdab74a5eb967d8a3af"
+      website="https://mariavak.github.io/"
+      papers="https://scholar.google.com/citations?user=FKUHYqMAAAAJ"
+    />
+    <Organizers
+      name="Zhuang"
+      surname="Liu"
+      institution="Princeton University"
+      img="https://www.cs.princeton.edu/sites/default/files/styles/profile_image/public/2026-01/zhuang_pic.jpg?h=a29134aa&itok=1-P4f9h5"
+      website="https://liuzhuang13.github.io/"
+      papers="https://scholar.google.com/citations?user=7OTD-LEAAAAJ"
+    />
+    <Organizers
+      name="Josephine"
+      surname="Sullivan"
+      institution="KTH Royal Institute of Technology"
+      img="https://www.csc.kth.se/~sullivan/me_small0.jpg"
+      website="https://www.csc.kth.se/~sullivan/"
+      papers="https://scholar.google.com/citations?user=REbc02cAAAAJ&hl=en"
+    />
+    <Organizers
+      name="Atsuto"
+      surname="Maki"
+      institution="KTH Royal Institute of Technology"
+      img="https://scholar.googleusercontent.com/citations?view_op=view_photo&user=bfWzlAEAAAAJ&citpid=1"
+      website="https://www.kth.se/profile/atsuto/"
+      papers="https://scholar.google.com/citations?user=bfWzlAEAAAAJ&hl=en"
+    />
+    </div>
+  </section>
 
   </main>
 </Layout>
