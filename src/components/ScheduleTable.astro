@@ -1,0 +1,43 @@
+---
+interface Entry {
+  hour_start: string;
+  hour_end: string;
+  emoji: string;
+  title: string;
+  gray_bg?: boolean;
+}
+
+interface Props {
+  entries: Entry[];
+}
+
+const { entries } = Astro.props;
+---
+
+<div class="table-responsive">
+  <table class="table table-borderless table-hover align-middle">
+    <tbody>
+      {
+        entries.map((entry) => (
+          <tr class={entry.gray_bg ? "table-secondary" : ""}>
+            <td class={`${entry.gray_bg ? "" : "bg-transparent"} text-center`}>
+              {entry.hour_start}
+            </td>
+
+            <td class={`${entry.gray_bg ? "" : "bg-transparent"} text-center`}>
+              {entry.hour_end}
+            </td>
+
+            <td class={`${entry.gray_bg ? "" : "bg-transparent"} text-center`}>
+              <span class="me-2">{entry.emoji}</span>
+            </td>
+            
+            <td class={!entry.gray_bg ? "bg-transparent" : ""}>
+              {entry.title}
+            </td>
+          </tr>
+        ))
+      }
+    </tbody>
+  </table>
+</div>

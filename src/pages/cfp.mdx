@@ -1,4 +1,5 @@
 import Title from '../components/Title.astro'
+import Timeline from "../components/Timeline.astro"
 import Layout from '../layouts/Layout.astro'
 
 export const title = "BISCUIT"
@@ -7,6 +8,29 @@ export const edition = "2nd"
 export const venue_name = "ECCV'26"
 export const venue_location = "Malmö, Sweden"
 export const venue_emojis = "🇸🇪"
+
+export const items = [
+  {
+    date: "June 29th 2026",
+    description: "Paper submission deadline",
+  },
+  {
+    date: "July 1st 2026",
+    description: "Review period start",
+  },
+  {
+    date: "July 19th 2026",
+    description: "Review period end",
+  },
+  {
+    date: "August 2nd 2026",
+    description: "Author notification",
+  },
+  {
+    date: "August 9th 2026",
+    description: "Camera-ready deadline",
+  },
+]
 
 <Layout>
 <main>
@@ -62,39 +86,26 @@ We invite authors to submit papers on **novel methodologies**, **foundational th
 
 <div class="row">
 <div class="col-12 col-lg-6">
-- The submissions will be handled using OpenReview via the official BISCUIT submission portal (TBA)
-- We invite researchers to submit their original and unpublished work related to the workshop's themes
-- Supplementary material is allowed. Reviewers will be encouraged to look at it, but are not obligated to do so.
-- All submissions should be compliant with double-blind review, using the [main conference's template](https://github.com/paolo-favaro/paper-template/archive/refs/tags/Latest.zip) and [guidelines](https://eccv.ecva.net/Conferences/2026/SubmissionPolicies)
+- The submissions will be handled using **OpenReview** via the official BISCUIT submission portal (TBA)
+- We invite researchers to submit their **original and unpublished work** related to the workshop's themes
+- Supplementary material is allowed. Reviewers will be encouraged to look at it, but are not obligated to do so
+- All submissions should be compliant with **double-blind review**, using the [main conference's template](https://github.com/paolo-favaro/paper-template/archive/refs/tags/Latest.zip) and [guidelines](https://eccv.ecva.net/Conferences/2026/SubmissionPolicies)
+- ❗ Submissions will be reciprocally peer-reviewed: thus, for every submitted paper, authors **must indicate at least one co-author to serve as a reviewer**. Failing to do so will result in a desk-reject
 </div>
 <div class="col-12 col-lg-6">
-- All the accepted papers will be published under the ECCV'26 workshop proceedings
-- All the accepted papers can be presented as posters during the workshop
-- One or more selected presentations will be presented orally during the workshop
-- At least one co-author of each accepted paper is expected to register for the conference and attend the workshop
+- There will be no rebuttal phase.
+- All the accepted papers will be published under the ECCV'26 workshop **proceedings**
+- All the accepted papers need to be presented as **posters** during the workshop
+- One or more selected presentations will be **presented orally** during the workshop
+- **At least one co-author** of each accepted paper **is expected to register for the conference** and attend the workshop
 </div>
 </div>
 
 
 ## Important dates 📅
-<div class="row">
-<div class="col-12 col-lg-4">
-- Paper submission deadline
-    - June 28th 2026 AoE
-</div>
-<div class="col-12 col-lg-4">
-- Author notification
-    - August 2nd 2026 AoE
-</div>
-<div class="col-12 col-lg-4">
-- Camera-ready deadline
-    - August 9th 2026 AoE
-</div>
-</div>
+All dates are intended to be in the All on Earth (AoE) time zone.
 
-
-
-
+<Timeline items={items} />
 
 </main>
 </Layout>

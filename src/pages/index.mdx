@@ -1,7 +1,8 @@
+import Layout from '../layouts/Layout.astro'
 import Title from '../components/Title.astro'
 import Keynote from '../components/Keynote.astro'
 import Organizers from '../components/Organizers.astro'
-import Layout from '../layouts/Layout.astro'
+import ScheduleTable from "../components/ScheduleTable.astro"
 
 import biscuit_logo from '../assets/biscuit_logo.png'
 import conference_logo from '../assets/eccv_logo.svg'
@@ -16,6 +17,102 @@ export const venue_name = "ECCV'26"
 export const venue_location = "Malmö, Sweden"
 export const venue_emojis = "🇸🇪"
 export const base = import.meta.env.BASE_URL
+
+export const entries = [
+  {
+    hour_start: "09:00",
+    hour_end: "09:10",
+    emoji: "🎉",
+    title: "Welcome & Opening Remarks",
+  },
+  {
+    hour_start: "09:10",
+    hour_end: "09:50",
+    emoji: "🌟",
+    title: "Invited Keynote Speech 1",
+  },
+  {
+    hour_start: "09:50",
+    hour_end: "10:30",
+    emoji: "🌟",
+    title: "Invited Keynote Speech 2",
+  },
+
+  {
+    hour_start: "10:30",
+    hour_end: "10:40",
+    emoji: "☕",
+    title: "Coffee Break",
+    gray_bg: true,
+  },
+
+  {
+    hour_start: "10:40",
+    hour_end: "11:20",
+    emoji: "🔦",
+    title: "Spotlight Presentations",
+  },
+  {
+    hour_start: "11:20",
+    hour_end: "12:00",
+    emoji: "🌟",
+    title: "Invited Keynote Speech 3",
+  },
+
+  {
+    hour_start: "12:00",
+    hour_end: "13:00",
+    emoji: "🍕",
+    title: "Lunch Break",
+    gray_bg: true,
+  },
+
+  {
+    hour_start: "13:00",
+    hour_end: "14:10",
+    emoji: "📜",
+    title: "Poster Presentations",
+  },
+  {
+    hour_start: "14:10",
+    hour_end: "14:50",
+    emoji: "🌟",
+    title: "Invited Keynote Speech 4",
+  },
+  {
+    hour_start: "14:50",
+    hour_end: "15:30",
+    emoji: "🔦",
+    title: "Spotlight Presentations",
+  },
+
+  {
+    hour_start: "15:30",
+    hour_end: "15:40",
+    emoji: "☕",
+    title: "Coffee Break",
+    gray_bg: true,
+  },
+
+  {
+    hour_start: "15:40",
+    hour_end: "16:20",
+    emoji: "🌟",
+    title: "Invited Keynote Speech 5",
+  },
+  {
+    hour_start: "16:20",
+    hour_end: "16:50",
+    emoji: "💬",
+    title: "Interactive Panel Discussion",
+  },
+  {
+    hour_start: "16:50",
+    hour_end: "17:00",
+    emoji: "🏆",
+    title: "Best Paper Award & Closing Remarks",
+  },
+]
 
 <Layout>
   <main>
@@ -95,7 +192,8 @@ export const base = import.meta.env.BASE_URL
     
     # Schedule 🕘
 
-    TBA
+    The workshop will be a **full-day** event. The schedule is still tentative.
+    <ScheduleTable entries={entries} />
 
     # Organizers ✏️
 
