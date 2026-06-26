@@ -1,96 +1,105 @@
 ---
 interface Item {
-  date: string
-  description: string
+  date: string;
+  date_new?: string | null;
+  description: string;
 }
 
 interface Props {
-  items: Item[]
+  items: Item[];
 }
 
-const { items } = Astro.props
+const { items } = Astro.props;
 ---
 
 <section class="py-5">
   <div class="container">
-
     <ul class="timeline">
+      {
+        items.map((item, i) => (
+          <li class={`timeline-item ${i % 2 === 0 ? "left" : "right"}`}>
+            <div class="marker">🍪</div>
 
-      {items.map((item, i) => (
-        <li class={`timeline-item ${i % 2 === 0 ? "left" : "right"}`}>
-          <div class="marker">🍪</div>
+            <div class="card border-0 h-100">
+              <div class="card-body p-0">
+                {/* <h5 class="text-secondary mb-1">{item.date}</h5> */}
+                <h5 class="text-secondary mb-1">
+                  <span
+                    class={item.date_new ? "text-decoration-line-through" : ""}
+                  >
+                    {item.date}
+                  </span>
+                  {item.date_new && (
+                    <span class="text-danger ms-2">{item.date_new}</span>
+                  )}
+                </h5>
 
-          <div class="card border-0 h-100">
-            <div class="card-body p-0">
-              <h5 class="text-secondary mb-1">{item.date}</h5>
-              <p class="mb-0">{item.description}</p>
+                <p class="mb-0">{item.description}</p>
+              </div>
             </div>
-          </div>
-
-        </li>
-      ))}
-
+          </li>
+        ))
+      }
     </ul>
-
   </div>
 </section>
 
 <style>
-/* =========================
+  /* =========================
    BASE
 ========================= */
 
-.timeline {
-  position: relative;
-  list-style: none;
-  margin: 0;
-  padding: 0;
+  .timeline {
+    position: relative;
+    list-style: none;
+    margin: 0;
+    padding: 0;
 
-  display: flex;
-  flex-direction: column;
-  gap: 2.5rem;
-}
+    display: flex;
+    flex-direction: column;
+    gap: 2.5rem;
+  }
 
-/* =========================
+  /* =========================
    MOBILE: VERTICAL TIMELINE
 ========================= */
 
-/* vertical line */
-.timeline::before {
-  content: "";
-  position: absolute;
-  left: 50%;
-  top: 0;
-  bottom: 0;
+  /* vertical line */
+  .timeline::before {
+    content: "";
+    position: absolute;
+    left: 50%;
+    top: 0;
+    bottom: 0;
 
-  width: 2px;
-  background: #dee2e6;
+    width: 2px;
+    background: #dee2e6;
 
-  transform: translateX(-50%);
-}
+    transform: translateX(-50%);
+  }
 
-.timeline-item {
-  position: relative;
-  width: 100%;
-}
+  .timeline-item {
+    position: relative;
+    width: 100%;
+  }
 
-/* zig-zag layout */
-.timeline-item.left {
-  padding-right: 55%;
-  text-align: right;
-}
+  /* zig-zag layout */
+  .timeline-item.left {
+    padding-right: 55%;
+    text-align: right;
+  }
 
-.timeline-item.right {
-  padding-left: 55%;
-  text-align: left;
-}
+  .timeline-item.right {
+    padding-left: 55%;
+    text-align: left;
+  }
 
-/* marker (mobile centered on line) */
-.marker {
-  position: absolute;
-  left: 50%;
-  top: 50%;
-  transform: translate(-50%, -50%);
-  font-size: 16px;
-}
+  /* marker (mobile centered on line) */
+  .marker {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 16px;
+  }
 </style>

@@ -1,41 +1,59 @@
 ---
-import 'bootstrap/dist/css/bootstrap.min.css';
-import Navigator from "../components/Navigator.astro"
+import "bootstrap/dist/css/bootstrap.min.css";
+import Navigator from "../components/Navigator.astro";
 const { title } = Astro.props;
 const base = import.meta.env.BASE_URL;
+const cfpUrl = base + '/cfp';
 ---
+
 <html lang="en">
   <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
     <link rel="icon" href={`${base}/favicon.ico`} sizes="any" />
     <title>BISCUIT@ECCV'26</title>
     <style>
       @font-face {
-        font-family: 'Ubuntu';
-        src: url("../assets/ubuntu_font.ttf") format('truetype');
+        font-family: "Ubuntu";
+        src: url("../assets/ubuntu_font.ttf") format("truetype");
         font-weight: 400;
         font-style: normal;
         font-display: swap;
       }
-      :root { --ui-font: 'Ubuntu', system-ui, -apple-system, 'Segoe UI', Arial; }
-      html, body { font-family: var(--ui-font); }
+      :root {
+        --ui-font: "Ubuntu", system-ui, -apple-system, "Segoe UI", Arial;
+      }
+      html,
+      body {
+        font-family: var(--ui-font);
+      }
     </style>
   </head>
   <body>
     <script>
-      import 'bootstrap/dist/js/bootstrap.bundle.min.js';
+      import "bootstrap/dist/js/bootstrap.bundle.min.js";
     </script>
+    <div
+      class="alert alert-warning alert-dismissible fade show m-0"
+      role="alert"
+    >
+      <strong>CfP deadline extended to July 7th 2026</strong> — more info <a href={cfpUrl}>here</a>
+      <button
+        type="button"
+        class="btn-close"
+        data-bs-dismiss="alert"
+        aria-label="Close"></button>
+    </div>
     <Navigator />
-	<div class="container mt-4">
-	<div class="row justify-content-center">
-		<div class="col-12 col-lg-8">
-		<article>
-			<slot/>
-		</article>
-		</div>
-	</div>
-	</div>
-    
+
+    <div class="container mt-4">
+      <div class="row justify-content-center">
+        <div class="col-12 col-lg-8">
+          <article>
+            <slot />
+          </article>
+        </div>
+      </div>
+    </div>
   </body>
 </html>
