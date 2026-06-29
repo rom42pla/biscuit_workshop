@@ -4,6 +4,7 @@ const {
   title = "Title",
   subtitle = "Some description here.",
   edition = "1st",
+  date = "Date",
   img = "https://via.placeholder.com/800x600",
   conference_img = "https://via.placeholder.com/800x600",
   kth_img = "",
@@ -12,12 +13,16 @@ const {
 } = Astro.props;
 ---
 
-<section class="container">
+<section class="mb-4 container">
   <div class="row align-items-center text-center justify-content-center">
     <div class="col-md-8">
-      <h1>{title}</h1>
-      <h2>{subtitle}</h2>
-      <h3>{edition} edition</h3>
+      <h1 class="display-1">{title}</h1>
+      <h3>{edition} {subtitle}</h3>
+      <div style="display: flex; align-items: center; gap: 1rem;">
+        <hr style="flex: 1; margin: 0;" />
+        <h4 style="margin: 0; white-space: nowrap;">{date}</h4>
+        <hr style="flex: 1; margin: 0;" />
+      </div>
     </div>
     <div class="col-6 col-md-4">
       <img src={img.src} class="img-fluid" alt="BISCUIT logo" />
@@ -29,10 +34,18 @@ const {
       <img src={kth_img.src} class="img-fluid logo" alt="KTH logo" />
     </div>
     <div class="col-4">
-      <img src={paris_saclay_img.src} class="img-fluid logo" alt="Paris-Saclay logo" />
+      <img
+        src={paris_saclay_img.src}
+        class="img-fluid logo"
+        alt="Paris-Saclay logo"
+      />
     </div>
     <div class="col-4">
-      <img src={princeton_img.src} class="img-fluid logo" alt="Princeton logo" />
+      <img
+        src={princeton_img.src}
+        class="img-fluid logo"
+        alt="Princeton logo"
+      />
     </div>
   </div>
 </section>

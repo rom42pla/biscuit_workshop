@@ -13,6 +13,7 @@ import princeton_logo from '../assets/princeton_logo.svg'
 export const title = "BISCUIT"
 export const subtitle = "International Workshop on Biomedical Image and Signal Computing for Unbiasedness, Interpretability, and Trustworthiness"
 export const edition = "2nd"
+export const date = "September 8th 2026"
 export const venue_name = "ECCV'26"
 export const venue_location = "Malmö, Sweden"
 export const venue_emojis = "🇸🇪"
@@ -21,42 +22,42 @@ export const base = import.meta.env.BASE_URL
 export const entries = [
   {
     hour_start: "09:00",
-    hour_end: "09:10",
+    hour_end: "09:15",
     emoji: "🎉",
     title: "Welcome & Opening Remarks",
   },
   {
-    hour_start: "09:10",
-    hour_end: "09:50",
+    hour_start: "09:15",
+    hour_end: "10:00",
     emoji: "🌟",
     title: "Invited Keynote Speech 1",
   },
   {
-    hour_start: "09:50",
+    hour_start: "10:00",
     hour_end: "10:30",
-    emoji: "🌟",
-    title: "Invited Keynote Speech 2",
+    emoji: "🔦",
+    title: "Spotlight Presentations",
   },
 
   {
     hour_start: "10:30",
-    hour_end: "10:40",
+    hour_end: "10:45",
     emoji: "☕",
     title: "Coffee Break",
     gray_bg: true,
   },
 
   {
-    hour_start: "10:40",
-    hour_end: "11:20",
+    hour_start: "10:45",
+    hour_end: "11:15",
     emoji: "🔦",
     title: "Spotlight Presentations",
   },
   {
-    hour_start: "11:20",
+    hour_start: "11:15",
     hour_end: "12:00",
     emoji: "🌟",
-    title: "Invited Keynote Speech 3",
+    title: "Invited Keynote Speech 2",
   },
 
   {
@@ -69,39 +70,40 @@ export const entries = [
 
   {
     hour_start: "13:00",
-    hour_end: "14:10",
+    hour_end: "14:00",
     emoji: "📜",
     title: "Poster Presentations",
   },
   {
-    hour_start: "14:10",
-    hour_end: "14:50",
-    emoji: "🌟",
-    title: "Invited Keynote Speech 4",
-  },
-  {
-    hour_start: "14:50",
-    hour_end: "15:30",
+    hour_start: "14:00",
+    hour_end: "14:30",
     emoji: "🔦",
     title: "Spotlight Presentations",
   },
+  {
+    hour_start: "14:30",
+    hour_end: "15:15",
+    emoji: "🌟",
+    title: "Invited Keynote Speech 3",
+  },
+  
 
   {
-    hour_start: "15:30",
-    hour_end: "15:40",
+    hour_start: "15:15",
+    hour_end: "15:30",
     emoji: "☕",
     title: "Coffee Break",
     gray_bg: true,
   },
 
   {
-    hour_start: "15:40",
-    hour_end: "16:20",
+    hour_start: "15:30",
+    hour_end: "16:15",
     emoji: "🌟",
-    title: "Invited Keynote Speech 5",
+    title: "Invited Keynote Speech 4",
   },
   {
-    hour_start: "16:20",
+    hour_start: "16:15",
     hour_end: "16:50",
     emoji: "💬",
     title: "Interactive Panel Discussion",
@@ -120,6 +122,7 @@ export const entries = [
       title={title}
       subtitle={subtitle}
       edition={edition}
+      date={date}
       img={biscuit_logo}
       conference_img={conference_logo}
       kth_img={kth_logo}
@@ -159,14 +162,6 @@ export const entries = [
       papers="https://scholar.google.com/citations?user=WjHjbrwAAAAJ&hl=en"
     />
     <Keynote
-      name="Aasa"
-      surname="Feragen"
-      institution="Technical University of Denmark"
-      img="https://orbit.dtu.dk/files-asset/398971195/142917_2c599d15.jpg?w=160&f=webp"
-      website="https://orbit.dtu.dk/en/persons/aasa-feragen"
-      papers="https://scholar.google.com/citations?user=MNDVpoUAAAAJ&hl=en"
-    />
-    <Keynote
       name="Nassir"
       surname="Navab"
       institution="Technical University of Munich"
@@ -174,14 +169,14 @@ export const entries = [
       website="https://www.professoren.tum.de/en/navab-nassir"
       papers="https://scholar.google.gr/citations?user=kzoVUPYAAAAJ&hl=en"
     />
-    <Keynote
+    {/* <Keynote
       name="Olga"
       surname="Russakovsky"
       institution="Princeton University"
       img="https://www.cs.princeton.edu/~olgarus/photos/OlgaRussakovsky.JPG"
       website="https://www.cs.princeton.edu/~olgarus/"
       papers="https://scholar.google.com/citations?user=TB5OwW8AAAAJ&hl=en"
-    />
+    /> */}
     <Keynote
       name="Toshihiko"
       surname="Yamasaki"
@@ -190,13 +185,21 @@ export const entries = [
       website="https://www.ee.t.u-tokyo.ac.jp/en/staff/yamasaki-toshihiko/"
       papers="https://scholar.google.co.jp/citations?hl=en&user=rE9iY5MAAAAJ&view_op=list_works&sortby=pubdate"
     />
+    <Keynote
+      name="Aasa"
+      surname="Feragen"
+      institution="Technical University of Denmark"
+      img="https://orbit.dtu.dk/files-asset/398971195/142917_2c599d15.jpg?w=160&f=webp"
+      website="https://orbit.dtu.dk/en/persons/aasa-feragen"
+      papers="https://scholar.google.com/citations?user=MNDVpoUAAAAJ&hl=en"
+    />
     </div>
   </section>
 
     
     # Schedule 🕘
 
-    The workshop will be a **full-day** event. The schedule is still tentative.
+    The workshop will be a **full-day** event on the first day of conference (September 8th). Note that the following schedule is still tentative.
     <ScheduleTable entries={entries} />
 
     # Organizers ✏️
