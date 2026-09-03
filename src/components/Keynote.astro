@@ -1,5 +1,7 @@
 ---
 import "bootstrap/dist/css/bootstrap.min.css";
+import { marked } from "marked";
+
 const {
   name = "Name",
   surname = "Surname",
@@ -7,21 +9,55 @@ const {
   img = "https://via.placeholder.com/800x600",
   website = ".",
   papers = ".",
+  slug,
+  bio,
+  full = false,
 } = Astro.props;
+
+const base = import.meta.env.BASE_URL;
 ---
 
-<div class="col-6 col-lg-3">
-  <div class="ratio ratio-1x1">
-    <img
-      src={img}
-      class="img-fluid object-fit-cover"
-      alt="Keynote speaker image"
-    />
+{full ? (
+  <div>
+    <div class="row align-items-center">
+      <div class="col-12 col-sm-4 col-lg-3">
+        <div class="ratio ratio-1x1">
+          <img
+            src={img}
+            class="img-fluid object-fit-cover rounded"
+            alt="Keynote speaker image"
+          />
+        </div>
+      </div>
+      <div class="col-12 col-sm-8 col-lg-9">
+        <h1>{`${name} ${surname}`}</h1>
+        <p><i>{institution}</i></p>
+        <p>
+          <a href={website} target="_blank" style="text-decoration: none">🌐 Website</a>
+          {" · "}
+          <a href={papers} target="_blank" style="text-decoration: none">📜 Publications</a>
+        </p>
+      </div>
+    </div>
+    {bio && <div class="mt-4 text-start" set:html={marked.parse(bio)} />}
   </div>
-  <h3>{name}<br>{surname}</h3>
-  <p><i>{institution}</i></p>
-  <p>
-    <a href={website} target="_blank" style="text-decoration: none">🌐</a>
-    <a href={papers} target="_blank" style="text-decoration: none">📜</a>
-  </p>
-</div>
+) : (
+  <div class="col-6 col-lg-3">
+    <div class="ratio ratio-1x1">
+      <img
+        src={img}
+        class="img-fluid object-fit-cover"
+        alt="Keynote speaker image"
+      />
+    </div>
+    <h3>{name}<br>{surname}</h3>
+    <p><i>{institution}</i></p>
+    <p>
+      <a href={website} target="_blank" style="text-decoration: none">🌐</a>
+      <a href={papers} target="_blank" style="text-decoration: none">📜</a>
+      {slug && (
+        <a href={`${base}/speakers/${slug}`} style="text-decoration: none">ℹ️</a>
+      )}
+    </p>
+  </div>
+)}

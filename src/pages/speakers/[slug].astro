@@ -1,0 +1,20 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import Keynote from '../../components/Keynote.astro';
+import { keynotes } from '../index.mdx';
+
+export function getStaticPaths() {
+  return keynotes.map((speaker) => ({
+    params: { slug: speaker.slug },
+    props: { speaker },
+  }));
+}
+
+const { speaker } = Astro.props;
+---
+
+<Layout keynotes={keynotes}>
+  <main>
+    <Keynote {...speaker} full />
+  </main>
+</Layout>

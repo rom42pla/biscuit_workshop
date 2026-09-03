@@ -2,18 +2,12 @@
 /*
 Simple navigation component.
 Props:
-- links: array of { href, label } (optional; defaults shown below)
-Usage:
-<NavSimple links={[ { href: '/', label: 'Home' }, { href: '/posts', label: 'Posts' }, { href: '/contact', label: 'Contact' } ]} />
+- keynotes: array of { slug, name, surname } (optional), used to populate the
+  "Invited Speakers" dropdown
 */
 import 'bootstrap/dist/css/bootstrap.min.css';
 const base = import.meta.env.BASE_URL;
-const { links = [
-  { href: base, label: 'Home' }, 
-			{ href: base + '/why', label: 'Why BISCUIT?' }, 
-			{ href: base + '/cfp', label: 'Call for Papers' }, 
-			{ href: 'https://sites.google.com/di.uniroma1.it/biscuit-workshop-1/home', label: 'Past edition' },
-] } = Astro.props;
+const { keynotes = [] } = Astro.props;
 ---
 <script>
   import 'bootstrap/dist/js/bootstrap.bundle.min.js';
@@ -27,9 +21,24 @@ const { links = [
     </button>
     <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
       <div class="navbar-nav">
-        {links.map(link => (
-          <a class="nav-link" href={link.href}>{link.label}</a>
-        ))}
+        <a class="nav-link" href={base}>Home</a>
+        <a class="nav-link" href={`${base}/why`}>Why BISCUIT?</a>
+        <a class="nav-link" href={`${base}/cfp`}>Call for Papers</a>
+        {keynotes.length > 0 && (
+          <div class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+              Invited Speakers
+            </a>
+            <ul class="dropdown-menu">
+              {keynotes.map((speaker) => (
+                <li>
+                  <a class="dropdown-item" href={`${base}/speakers/${speaker.slug}`}>{`${speaker.name} ${speaker.surname}`}</a>
+                </li>
+              ))}
+            </ul>
+          </div>
+        )}
+        <a class="nav-link" href="https://sites.google.com/di.uniroma1.it/biscuit-workshop-1/home">Past edition</a>
       </div>
     </div>
   </div>

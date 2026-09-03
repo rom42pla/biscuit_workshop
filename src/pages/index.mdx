@@ -20,6 +20,49 @@ export const venue_location = "Malmö, Sweden"
 export const venue_emojis = "🇸🇪"
 export const base = import.meta.env.BASE_URL
 
+export const keynotes = [
+  {
+    slug: "nassir-navab",
+    name: "Nassir",
+    surname: "Navab",
+    institution: "Technical University of Munich",
+    img: "https://www.professoren.tum.de/fileadmin/w00bgr/www/pics/NavabNassir2.jpg",
+    website: "https://www.professoren.tum.de/en/navab-nassir",
+    papers: "https://scholar.google.gr/citations?user=kzoVUPYAAAAJ&hl=en",
+    bio: `Nassir Navab is a Professor from the Technical University of Munich specialized in computer-aided medical procedures and augmented reality. His work bridges medicine and computer science, focusing on technologies that enhance medical interventions. He has held key roles at MIT and Siemens and serves on the editorial boards of top medical imaging journals.`,
+  },
+  {
+    slug: "aldo-faisal",
+    name: "Aldo",
+    surname: "Faisal",
+    institution: "Imperial College London",
+    img: "https://profiles.imperial.ac.uk/a.faisal/thumbnail",
+    website: "https://profiles.imperial.ac.uk/a.faisal",
+    papers: "https://scholar.google.com/citations?user=WjHjbrwAAAAJ&hl=en",
+    bio: `Aldo Faisal is a Professor from the Imperial College London specialized in AI & Neuroscience, and Founding Director of the UKRI Centre for Doctoral Training in AI for Healthcare. He has received numerous awards for his research, like the Toyota Mobility Foundation Research Discovery Prize, a UKRI Turing AI Fellowship, and a Rosetree Interdisciplinary Award. He has also been featured in global media outlets such as BBC, CNN, and TED.`,
+  },
+  {
+    slug: "toshihiko-yamasaki",
+    name: "Toshihiko",
+    surname: "Yamasaki",
+    institution: "University of Tokyo",
+    img: "https://cms.ee.t.u-tokyo.ac.jp/assets/yamasaki-tosihiko.jpg",
+    website: "https://www.ee.t.u-tokyo.ac.jp/en/staff/yamasaki-toshihiko/",
+    papers: "https://scholar.google.co.jp/citations?hl=en&user=rE9iY5MAAAAJ&view_op=list_works&sortby=pubdate",
+    bio: `Toshihiko Yamasaki is a Professor from the University of Tokyo whose research spans Computer Vision, Pattern Recognition, and Machine Learning, bridging foundational AI research and real-world applications. He leads projects on Attractiveness Computing, AI-assisted Profiling and Recommendation, and trustworthy AI, while actively collaborating with industry and academic partners to address large-scale societal challenges.`,
+  },
+  {
+    slug: "aasa-feragen",
+    name: "Aasa",
+    surname: "Feragen",
+    institution: "Technical University of Denmark",
+    img: "https://orbit.dtu.dk/files-asset/398971195/142917_2c599d15.jpg?w=160&f=webp",
+    website: "https://orbit.dtu.dk/en/persons/aasa-feragen",
+    papers: "https://scholar.google.com/citations?user=MNDVpoUAAAAJ&hl=en",
+    bio: `Aasa Feragen is a Professor from the Technical University of Denmark whose research sits at the intersection of machine learning, mathematics, and medical imaging with a particular focus on bringing responsible AI tools to practical use. Aasa has helped build a Danish cross-university research group specializing in AI for fetal ultrasound.`,
+  },
+]
+
 export const entries = [
   {
     hour_start: "09:00",
@@ -155,7 +198,7 @@ export const entries = [
   },
 ]
 
-<Layout>
+<Layout keynotes={keynotes}>
   <main>
     <Title
       title={title}
@@ -193,46 +236,7 @@ export const entries = [
 
     <section class="container">
     <div class="row align-items-top text-center justify-content-center">
-      <Keynote
-      name="Aldo"
-      surname="Faisal"
-      institution="Imperial College London"
-      img="https://profiles.imperial.ac.uk/a.faisal/thumbnail"
-      website="https://profiles.imperial.ac.uk/a.faisal"
-      papers="https://scholar.google.com/citations?user=WjHjbrwAAAAJ&hl=en"
-    />
-    <Keynote
-      name="Nassir"
-      surname="Navab"
-      institution="Technical University of Munich"
-      img="https://www.professoren.tum.de/fileadmin/w00bgr/www/pics/NavabNassir2.jpg"
-      website="https://www.professoren.tum.de/en/navab-nassir"
-      papers="https://scholar.google.gr/citations?user=kzoVUPYAAAAJ&hl=en"
-    />
-    {/* <Keynote
-      name="Olga"
-      surname="Russakovsky"
-      institution="Princeton University"
-      img="https://www.cs.princeton.edu/~olgarus/photos/OlgaRussakovsky.JPG"
-      website="https://www.cs.princeton.edu/~olgarus/"
-      papers="https://scholar.google.com/citations?user=TB5OwW8AAAAJ&hl=en"
-    /> */}
-    <Keynote
-      name="Toshihiko"
-      surname="Yamasaki"
-      institution="University of Tokyo"
-      img="https://cms.ee.t.u-tokyo.ac.jp/assets/yamasaki-tosihiko.jpg"
-      website="https://www.ee.t.u-tokyo.ac.jp/en/staff/yamasaki-toshihiko/"
-      papers="https://scholar.google.co.jp/citations?hl=en&user=rE9iY5MAAAAJ&view_op=list_works&sortby=pubdate"
-    />
-    <Keynote
-      name="Aasa"
-      surname="Feragen"
-      institution="Technical University of Denmark"
-      img="https://orbit.dtu.dk/files-asset/398971195/142917_2c599d15.jpg?w=160&f=webp"
-      website="https://orbit.dtu.dk/en/persons/aasa-feragen"
-      papers="https://scholar.google.com/citations?user=MNDVpoUAAAAJ&hl=en"
-    />
+      {keynotes.map((speaker) => <Keynote {...speaker} />)}
     </div>
   </section>
 
