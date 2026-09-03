@@ -1,9 +1,12 @@
 ---
+import { marked } from "marked";
+
 interface Entry {
   hour_start: string;
   hour_end: string;
   emoji: string;
   title: string;
+  description?: string;
   gray_bg?: boolean;
 }
 
@@ -55,6 +58,9 @@ const calculateDuration = (start: string, end: string): string => {
             
             <td class={!entry.gray_bg ? "bg-transparent" : ""}>
               {entry.title}
+              {entry.description && (
+                <div class="small text-muted" set:html={marked.parse(entry.description)} />
+              )}
             </td>
           </tr>
         ))
@@ -62,3 +68,16 @@ const calculateDuration = (start: string, end: string): string => {
     </tbody>
   </table>
 </div>
+
+<style>
+  td :global(.small p),
+  td :global(.small ul),
+  td :global(.small ol) {
+    margin-bottom: 0;
+  }
+
+  td :global(.small ul),
+  td :global(.small ol) {
+    padding-left: 1.1em;
+  }
+</style>
