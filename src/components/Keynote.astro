@@ -1,6 +1,5 @@
 ---
 import "bootstrap/dist/css/bootstrap.min.css";
-import { marked } from "marked";
 
 const {
   name = "Name",
@@ -9,7 +8,6 @@ const {
   img = "https://via.placeholder.com/800x600",
   website = ".",
   papers = ".",
-  bio,
   full = false,
 } = Astro.props;
 
@@ -41,7 +39,9 @@ const slug = `${name}-${surname}`.toLowerCase().replace(/\s+/g, "-");
             </p>
           </div>
         </div>
-        {bio && <div class="mt-3 text-start" set:html={marked.parse(bio)} />}
+        <div class="mt-3 text-start">
+          <slot />
+        </div>
       </div>
     </div>
   </div>

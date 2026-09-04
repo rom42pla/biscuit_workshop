@@ -2,13 +2,63 @@ import Layout from '../layouts/Layout.astro'
 import Keynote from '../components/Keynote.astro'
 import { keynotes } from './index.mdx'
 
+export const speaker = (surname) => keynotes.find((k) => k.surname === surname)
+
 <Layout>
 <main>
 
 # Invited Speakers 🎤
 
 <div class="row">
-  {keynotes.map((speaker) => <Keynote {...speaker} full />)}
+
+<Keynote {...speaker("Navab")} full>
+
+{/* Nassir Navab is a Professor from the Technical University of Munich specialized in computer-aided medical procedures and augmented reality. His work bridges medicine and computer science, focusing on technologies that enhance medical interventions. He has held key roles at MIT and Siemens and serves on the editorial boards of top medical imaging journals. */}
+
+_Prof. Navab_ is a _Full Professor_ and _Director of the Laboratories for Computer Aided Medical Procedures_ at the _Technical University of Munich_, where he also directs the _Medical Augmented Reality Summer School_ series. 
+He earned his PhD at _INRIA/Paris XI_, followed by postdoctoral research at the _MIT Media Laboratory_. 
+
+His research focuses on computer-aided medical procedures and augmented reality, bridging the gap between medicine and computer science, with pioneering contributions to digital surgical workflow modeling and robotic imaging. 
+
+Prof. Navab has served on the _Board of Directors of the MICCAI Society_ and sits on the editorial boards of several leading journals, including _IEEE Transactions on Medical Imaging_, _Medical Image Analysis_, and _Medical Physics_. 
+Among his many honors are the _MICCAI Enduring Impact Award_, the _IEEE ISMAR Career Impact Award_, and the _Siemens Inventor of the Year Award_. 
+He is a Fellow of _MICCAI_, _ELLIS_, _IEEE_, and a Member of _Academia Europaea_.
+</Keynote>
+
+<Keynote {...speaker("Faisal")} full>
+
+_Prof. Faisal_ is _Professor of AI & Neuroscience_ in the _Department of Computing_ and the _Department of Bioengineering_ at _Imperial College London_, and holds a _Chair in Digital Health_ at the _University of Bayreuth_.
+He earned his _PhD_ at the _University of Cambridge_, working on the biophysical sources of neuronal variability, and was subsequently elected a _Junior Research Fellow_ at _Wolfson College, Cambridge_.
+
+He is _Founding Director_ of the _UKRI Centre for Doctoral Training in AI for Healthcare_, and leads the _Brain & Behaviour Lab_ and the _Behaviour Analytics Lab_, working at the intersection of _AI_, _neuroscience_, and _human behaviour analytics_.
+
+Prof. Faisal serves as _Associate Editor_ for _Nature Scientific Data_ and _PLOS Computational Biology_, and has chaired major conferences including _KDD_, _NeurIPS_, and _IEEE BSN_.
+Among his honors are the _UKRI Turing AI Fellowship_, the _Toyota Mobility Foundation Research Discovery Prize_, and the _Rosetree Interdisciplinary Award_.
+
+</Keynote>
+
+<Keynote {...speaker("Yamasaki")} full>
+
+_Prof. Yamasaki_ is a _Professor_ in the _Department of Information and Communication Engineering_, _Graduate School of Information Science and Technology_, at _The University of Tokyo_.
+He earned his _PhD_ at _The University of Tokyo_.
+
+His research spans _computer vision_, _pattern recognition_, and _machine learning_, bridging foundational AI research and real-world applications, including work on _attractiveness computing_, _AI-assisted profiling and recommendation_, and _trustworthy AI_.
+
+Prof. Yamasaki actively collaborates with industry and academic partners to address large-scale societal challenges through his research.
+
+</Keynote>
+
+<Keynote {...speaker("Feragen")} full>
+
+_Prof. Feragen_ is _Professor_ at the _Technical University of Denmark_ and _CSO of Prenaital_.
+She earned her _MSc_ and _PhD in Mathematics_ at the _University of Helsinki_, followed by postdoctoral research at the _University of Copenhagen_ and the _Max Planck Institute for Intelligent Systems_ in Tübingen.
+
+Her research sits at the intersection of _machine learning_, _mathematics_, and _medical imaging_, with a particular focus on responsible AI for practical use, including _uncertainty quantification_, _explainable AI_, and _algorithmic fairness_.
+
+Prof. Feragen has helped build a Danish cross-university research group specializing in _AI for fetal ultrasound_, work that led to the founding of _Prenaital_, whose mission is to give access to best-in-class prenatal care by using AI to support clinicians of every experience level.
+
+</Keynote>
+
 </div>
 
 </main>
