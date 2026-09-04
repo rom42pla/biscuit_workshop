@@ -32,7 +32,7 @@ const slug = `${name}-${surname}`.toLowerCase().replace(/\s+/g, "-");
           <div class="col-8 col-sm-9 text-start">
             <h3 class="mb-1">{`${name} ${surname}`}</h3>
             <p><i>{institution}</i></p>
-            <p class="mb-0">
+            <p>
               <a href={website} target="_blank" style="text-decoration: none">🌐 Website</a>
               {" · "}
               <a href={papers} target="_blank" style="text-decoration: none">📜 Publications</a>
@@ -61,10 +61,20 @@ const slug = `${name}-${surname}`.toLowerCase().replace(/\s+/g, "-");
         {name}<br>{surname}
       </a>
     </h3>
-    <p><i>{institution}</i></p>
+    <p class="keynote-card-institution">
+      <a href={`${base}/speakers#${slug}`} style="text-decoration: none; color: inherit;">
+        <i>{institution}</i>
+      </a>
+    </p>
     <p>
       <a href={website} target="_blank" style="text-decoration: none">🌐</a>
       <a href={papers} target="_blank" style="text-decoration: none">📜</a>
     </p>
   </div>
 )}
+
+<style>
+  .keynote-card-institution {
+    min-height: 3em;
+  }
+</style>

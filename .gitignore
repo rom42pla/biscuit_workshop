@@ -22,3 +22,20 @@ pnpm-debug.log*
 
 # jetbrains setting folder
 .idea/
+
+# LaTeX build artifacts (slides/)
+*.aux
+*.bbl
+*.bcf
+*.blg
+*.fdb_latexmk
+*.fls
+*.log
+*.nav
+*.out
+*.run.xml
+*.snm
+*.synctex.gz
+*.toc
+*.vrb
+luatex.*/
