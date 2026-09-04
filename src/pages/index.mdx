@@ -22,7 +22,6 @@ export const base = import.meta.env.BASE_URL
 
 export const keynotes = [
   {
-    slug: "nassir-navab",
     name: "Nassir",
     surname: "Navab",
     institution: "Technical University of Munich",
@@ -32,7 +31,6 @@ export const keynotes = [
     bio: `Nassir Navab is a Professor from the Technical University of Munich specialized in computer-aided medical procedures and augmented reality. His work bridges medicine and computer science, focusing on technologies that enhance medical interventions. He has held key roles at MIT and Siemens and serves on the editorial boards of top medical imaging journals.`,
   },
   {
-    slug: "aldo-faisal",
     name: "Aldo",
     surname: "Faisal",
     institution: "Imperial College London",
@@ -42,7 +40,6 @@ export const keynotes = [
     bio: `Aldo Faisal is a Professor from the Imperial College London specialized in AI & Neuroscience, and Founding Director of the UKRI Centre for Doctoral Training in AI for Healthcare. He has received numerous awards for his research, like the Toyota Mobility Foundation Research Discovery Prize, a UKRI Turing AI Fellowship, and a Rosetree Interdisciplinary Award. He has also been featured in global media outlets such as BBC, CNN, and TED.`,
   },
   {
-    slug: "toshihiko-yamasaki",
     name: "Toshihiko",
     surname: "Yamasaki",
     institution: "University of Tokyo",
@@ -52,7 +49,6 @@ export const keynotes = [
     bio: `Toshihiko Yamasaki is a Professor from the University of Tokyo whose research spans Computer Vision, Pattern Recognition, and Machine Learning, bridging foundational AI research and real-world applications. He leads projects on Attractiveness Computing, AI-assisted Profiling and Recommendation, and trustworthy AI, while actively collaborating with industry and academic partners to address large-scale societal challenges.`,
   },
   {
-    slug: "aasa-feragen",
     name: "Aasa",
     surname: "Feragen",
     institution: "Technical University of Denmark",
@@ -102,7 +98,7 @@ export const entries = [
     emoji: "🔦",
     title: "Spotlight Presentations",
     description: `
-  - [Rethinking Synthetic Brain MRI Evaluation with Decoupled Image and Anatomical Fidelity](https://openreview.net/forum?id=qIwzNeIpEC) <br> presented by _TBA_
+  - [Rethinking Synthetic Brain MRI Evaluation with Decoupled Image and Anatomical Fidelity](https://openreview.net/forum?id=qIwzNeIpEC) <br> presented by _Suhyun Ahn_
   - [MedPAO-VL: Interpretable and Protocol-Compliant Agent for Structured Radiology Report Generation](https://openreview.net/forum?id=JxC8OxgmMw) <br> presented by _TBA_
   - [Beyond Dice: An Artifact-Centered Protocol for Auditing Trustworthy Forearm Ultrasound Segmentation](https://openreview.net/forum?id=uy7dDhB3KX) <br> presented by _Sergei Olegovich Kurashkin_
 `,
@@ -112,7 +108,7 @@ export const entries = [
     hour_end: "12:00",
     emoji: "🍪",
     title: "BISCUIT Bake-off — Best Paper Candidate Panel",
-    description: "The panelists will be: _Théo Sourget_, _Tom Siegl_, TBA, TBA",
+    description: "The panelists will be: _Théo Sourget_, _Tom Siegl_, _Suhyun Ahn_, TBA",
   },
   // {
   //   hour_start: "12:00",
@@ -198,7 +194,7 @@ export const entries = [
   },
 ]
 
-<Layout keynotes={keynotes}>
+<Layout>
   <main>
     <Title
       title={title}

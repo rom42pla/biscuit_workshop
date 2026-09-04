@@ -1,0 +1,15 @@
+import Layout from '../layouts/Layout.astro'
+import Keynote from '../components/Keynote.astro'
+import { keynotes } from './index.mdx'
+
+<Layout>
+<main>
+
+# Invited Speakers 🎤
+
+<div class="row">
+  {keynotes.map((speaker) => <Keynote {...speaker} full />)}
+</div>
+
+</main>
+</Layout>
